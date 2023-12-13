@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       post '/login', to: 'sessions#login'
       post '/signup', to: 'registrations#signup'
       delete '/logout', to: 'sessions#logout'
+
+      resources :products, only: :index
     end
   end
 end
