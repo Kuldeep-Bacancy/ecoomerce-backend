@@ -6,5 +6,13 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root 'application#index'
+
+  scope :api, constraints: { format: 'json' } do
+    scope :v1 do
+      post '/login', to: 'sessions#login'
+      post '/signup', to: 'registrations#signup'
+      delete '/logout', to: 'sessions#logout'
+    end
+  end
 end
