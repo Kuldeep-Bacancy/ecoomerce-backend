@@ -37,13 +37,16 @@ gem 'bootsnap', require: false
 gem 'cloudinary'
 gem 'jsonapi-serializer'
 gem 'jwt'
+gem 'pagy', '~> 6.2'
 gem 'rack-cors'
 gem 'rubocop'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'brakeman'
+  gem 'bullet'
   gem 'debug', platforms: %i[mri windows]
+  gem 'faker'
 end
 
 group :development do
